@@ -5,7 +5,7 @@ const contacts = [
     {
         name: "Melissa West",
         image: "https://randomuser.me/api/portraits/women/55.jpg",
-        online: true
+        online: false
     },
     {
         name: "Ted Myers",
