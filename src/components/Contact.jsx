@@ -23,23 +23,29 @@ import './Contact.css';
 // }
 
 class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            online: false,
+        };
+    }
 
     render() {
-        <div className="Contact">
-            <img className="avatar" src={this.props.image} alt={this.props.name}></img>
-            <div>
-                <p className="name">{this.props.name}</p>
-                <p className="status">
-                    <span className={this.props.isOnline}></span>
-                    <span className="status-text">
-                        {textIsOnline}
-                    </span>
-                </p>
+        return (
+            <div className="Contact">
+                <img className="avatar" src={this.props.image} alt={this.props.name}></img>
+                <div>
+                    <p className="name">{this.props.name}</p>
+                    <p className="status">
+                        <span className={this.state.online ? "status-online" : "status-offline"}></span>
+                        <span className="status-text">
+                            {this.state.online ? "Online" : "Offline"}
+                        </span>
+                    </p>
+                </div>
             </div>
-        </div>
+        )
     }
-        
-    
 }
 
 export default Contact;
