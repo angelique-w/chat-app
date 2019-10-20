@@ -36,7 +36,13 @@ class Contact extends React.Component {
                 <img className="avatar" src={this.props.image} alt={this.props.name}></img>
                 <div>
                     <p className="name">{this.props.name}</p>
-                    <p className="status">
+                    <p 
+                    onClick = {event => {
+                        const newState = !this.state.online;
+                        this.setState({ online: newState });
+                    }}
+
+                    className="status">
                         <span className={this.state.online ? "status-online" : "status-offline"}></span>
                         <span className="status-text">
                             {this.state.online ? "Online" : "Offline"}
